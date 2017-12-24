@@ -92,10 +92,13 @@ function addOperatorEvents(){
 	button2.addEventListener('mousedown', function(e){
 			result[2]= parseInt(screenText.textContent);
 			var ans = operate(result[1], result[0],result[2]);
-
-			screenText.textContent=ans;
+			result[0]=ans;
+			result[1] =null;
+			result[2] = null;
+			screenText.textContent=parseFloat(ans.toFixed(10)).toString();
 
 			console.log(result);
+
 		});
 
 	var button3 = document.getElementById("clear");
